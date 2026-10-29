@@ -1,6 +1,4 @@
 const lastChecked = document.querySelector("#last-checked");
-const statusBadge = document.querySelector("#status-badge");
-const statusLabel = document.querySelector("#status-label");
 const statusHeading = document.querySelector("#status-heading");
 const statusDescription = document.querySelector("#status-description");
 
@@ -25,15 +23,6 @@ async function updateStatus() {
     // Tell CSS which theme to use.
     document.body.dataset.status = online ? "online" : "offline";
 
-    // Update the status badge.
-    statusBadge.className = `status-badge ${
-      online ? "operational" : "outage"
-    }`;
-
-    statusLabel.textContent = online
-      ? "Bot is online"
-      : "Bot is offline";
-
     // Change the page content.
     statusHeading.textContent = online
       ? "The bot is up and running."
@@ -41,7 +30,7 @@ async function updateStatus() {
 
     statusDescription.firstChild.textContent = online
       ? "Everything is working normally. Last checked "
-      : "The bot is not currently running. Last checked ";
+      : "The bot is not running at the moment. Last checked ";
 
     // Update the last-checked time.
     lastChecked.textContent = new Intl.DateTimeFormat("en", {
@@ -56,12 +45,10 @@ async function updateStatus() {
     // Treat an unreachable status API as an unknown/offline state.
     document.body.dataset.status = "offline";
 
-    statusBadge.className = "status-badge outage";
-    statusLabel.textContent = "Status unavailable";
 
-    statusHeading.textContent = "We can't reach the bot.";
+    statusHeading.textContent = "The bot is currently offline.";
     statusDescription.firstChild.textContent =
-      "The status API could not be reached. Last checked ";
+      "The server could be under maintenance or experiencing issues. Last checked ";
 
     lastChecked.textContent = new Intl.DateTimeFormat("en", {
       hour: "numeric",
