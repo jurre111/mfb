@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A free and easy alternative for paid MADFUT trading bots." />
+  <title>MF Bot</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+  <main class="page">
+    <div class="ambient-glow" aria-hidden="true"></div>
+
+    <section class="status-page" aria-labelledby="status-heading">
+      <header class="brand">
+        <span class="brand-mark" aria-hidden="true">
+            <span class="brand-dot"></span>
+        </span>
+        <span>MF Bot</span>
+      </header>
+
+      <div class="status-card">
+        <section class="status-summary">
+          <div class="status-badge operational">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Bot is online
+          </div>
+
+          <h1 id="status-heading">The bot is up and running.</h1>
+          <p class="description">
+            Everything is working normally. Last checked
+            <time id="last-checked">just now</time>.
+          </p>
+
+          <div class="actions">
+            <button class="button primary-button" id="check-button" type="button">
+                Check again
+              </button>
+            <!-- Replace the link below with your bot's URL -->
+            <a class="button secondary-button" href="#">Open bot</a>
+          </div>
+        </section>
+
+        <!-- Use this section for any information you want to share -->
+        <section class="information" aria-labelledby="information-heading">
+          <p class="eyebrow">Information</p>
+          <h2 id="information-heading">About this bot</h2>
+          <p>
+            Add a short description here. You can explain what the bot does,
+            where people can use it, or share any important updates.
+          </p>
+
+          <div class="links" aria-label="Related links">
+            <!-- Change these labels and URLs to your own -->
+            <a href="#">Documentation <span aria-hidden="true">↗</span></a>
+            <a href="#">Support <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="/script.js" defer></script>
+</body>
+
+</html>
