@@ -173,13 +173,57 @@ h1 {
   line-height: 24px;
 }
 
+
 .install {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 8px 0 32px;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  gap: 14px;
+
+  margin: 24px 0;
+  padding: 28px 24px;
+
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+.install .description {
+  max-width: 360px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.install .actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.install .button {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .install {
+    padding: 24px 16px;
+    margin: 20px 0;
+  }
+
+  .install .actions {
+    flex-direction: column;
+  }
+
+  .install .button {
+    width: 100%;
+  }
 }
 
 .actions {

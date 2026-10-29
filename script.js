@@ -1,4 +1,3 @@
-const checkButton = document.querySelector("#check-button");
 const lastChecked = document.querySelector("#last-checked");
 const statusBadge = document.querySelector("#status-badge");
 const statusLabel = document.querySelector("#status-label");
@@ -6,9 +5,6 @@ const statusHeading = document.querySelector("#status-heading");
 const statusDescription = document.querySelector("#status-description");
 
 async function updateStatus() {
-  checkButton.disabled = true;
-  checkButton.textContent = "Checking...";
-
   try {
     const response = await fetch("https://mfb.bonto.run/api/status", {
       cache: "no-store",
@@ -72,13 +68,8 @@ async function updateStatus() {
       minute: "2-digit",
       second: "2-digit",
     }).format(new Date());
-  } finally {
-    checkButton.disabled = false;
-    checkButton.textContent = "Check again";
   }
 }
-
-checkButton.addEventListener("click", updateStatus);
 
 // Check immediately when the page loads.
 updateStatus();
