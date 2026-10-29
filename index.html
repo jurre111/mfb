@@ -7,10 +7,10 @@
   <meta name="description" content="A free and easy alternative for paid MADFUT trading bots." />
   <title>MF Bot</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/x-icon" href="/public/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/public/favicon.svg?">
 </head>
 
-<body>
+<body data-status="checking">
   <main class="page">
     <div class="ambient-glow" aria-hidden="true"></div>
 
@@ -24,39 +24,43 @@
 
       <div class="status-card">
         <section class="status-summary">
-          <div class="status-badge operational">
+          <div class="status-badge operational" id="status-badge">
             <span class="pulse-dot" aria-hidden="true"></span>
-            Bot is online
+            <span id="status-label">Checking status...</span>
           </div>
 
-          <h1 id="status-heading">The bot is up and running.</h1>
+          <h1 id="status-heading">Checking bot status...</h1>
+
+          <p class="description" id="status-description">
+            Connecting to the status API.
+            Last checked <time id="last-checked">—</time>.
+          </p>
+          <br><br>
+        </section>
+        <section class="install">
+          <br><br>
           <p class="description">
-            Everything is working normally. Last checked
-            <time id="last-checked">just now</time>.
+            Use the button below to use the bot completely for free.<br>It will stay free forever.
           </p>
 
           <div class="actions">
-            <button class="button primary-button" id="check-button" type="button">
-                Check again
-              </button>
-            <!-- Replace the link below with your bot's URL -->
-            <a class="button secondary-button" href="#">Open bot</a>
+            <a class="button primary-button" href="https://discord.com/oauth2/authorize?client_id=1564028963867852901">Install bot</a>
+            <button class="button secondary-button" id="check-button" type="button">
+              Check again
+            </button>
           </div>
         </section>
 
-        <!-- Use this section for any information you want to share -->
         <section class="information" aria-labelledby="information-heading">
           <p class="eyebrow">Information</p>
-          <h2 id="information-heading">About this bot</h2>
           <p>
-            Add a short description here. You can explain what the bot does,
-            where people can use it, or share any important updates.
+            To use the bot, you'll need to install the bot into your Discord account. Click the "Install bot" button above, click "Add to My Apps", scroll down, and finally click Authorize. After that, you can use the command <code>/mf bottrade</code> anywhere in Discord. If you have any questions, you can find my Discord below.
+            <br><br>
+            This bot is a highly simplified version of <a class="dotted-link" href="https://github.com/itsrespek/MADFUT27-Bot/">itsrespek's MADFUT Bot</a>. It only supports one command when installed to a user account which is <code>/mf bottrade</code>. You can simply put in your MADFUT username and the amount of trades you want and it will send you an invite.
           </p>
 
           <div class="links" aria-label="Related links">
-            <!-- Change these labels and URLs to your own -->
-            <a href="#">Documentation <span aria-hidden="true">↗</span></a>
-            <a href="#">Support <span aria-hidden="true">↗</span></a>
+            <a href="https://discordapp.com/users/886147284214112337">Support <span aria-hidden="true">↗</span></a>
           </div>
         </section>
       </div>

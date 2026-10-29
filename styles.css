@@ -55,9 +55,11 @@ button {
   width: min(100%, 768px);
   height: 384px;
   margin: auto;
-  background: radial-gradient(ellipse at top,
-      rgba(52, 211, 153, 0.08),
-      transparent 68%);
+  background: radial-gradient(
+    ellipse at top,
+    rgba(161, 161, 170, 0.06),
+    transparent 68%
+  );
   pointer-events: none;
 }
 
@@ -93,8 +95,8 @@ button {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #34d399;
-  box-shadow: 0 0 14px rgba(52, 211, 153, 0.7);
+  background: #a1a1aa;
+  box-shadow: 0 0 14px rgba(161, 161, 170, 0.35);
 }
 
 .status-card {
@@ -171,6 +173,15 @@ h1 {
   line-height: 24px;
 }
 
+.install {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0 32px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
 .actions {
   display: flex;
   align-items: center;
@@ -197,14 +208,14 @@ h1 {
 }
 
 .primary-button {
-  border: 1px solid #34d399;
-  color: #052e24;
-  background: #34d399;
+  border: 1px solid #a1a1aa;
+  color: #18181b;
+  background: #a1a1aa;
 }
 
 .primary-button:hover {
-  border-color: #6ee7b7;
-  background: #6ee7b7;
+  border-color: #d4d4d8;
+  background: #d4d4d8;
 }
 
 .secondary-button {
@@ -221,7 +232,7 @@ h1 {
 
 .button:focus-visible,
 .links a:focus-visible {
-  outline: 2px solid rgba(52, 211, 153, 0.65);
+  outline: 2px solid rgba(161, 161, 170, 0.65);
   outline-offset: 3px;
 }
 
@@ -232,7 +243,7 @@ h1 {
 
 .eyebrow {
   margin: 0 0 10px;
-  color: #34d399;
+  color: #a1a1aa;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -253,6 +264,17 @@ h1 {
   color: #8b8b94;
   font-size: 14px;
   line-height: 1.7;
+}
+
+.dotted-link {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
+.dotted-link:hover {
+  color: #d4d4d8;
 }
 
 .links {
@@ -310,4 +332,87 @@ h1 {
   .pulse-dot {
     animation: none;
   }
+}
+
+/* Default/loading theme */
+body:not([data-status]) .status-badge {
+  border-color: rgba(161, 161, 170, 0.2);
+  color: #a1a1aa;
+  background: rgba(161, 161, 170, 0.06);
+}
+
+body:not([data-status]) .pulse-dot {
+  animation: none;
+}
+
+/* Online theme */
+body[data-status="online"] .ambient-glow {
+  background: radial-gradient(
+    ellipse at top,
+    rgba(52, 211, 153, 0.08),
+    transparent 68%
+  );
+}
+
+body[data-status="online"] .brand-dot {
+  background: #34d399;
+  box-shadow: 0 0 14px rgba(52, 211, 153, 0.7);
+}
+
+body[data-status="online"] .eyebrow {
+  color: #34d399;
+}
+
+body[data-status="online"] .primary-button {
+  border-color: #34d399;
+  color: #052e24;
+  background: #34d399;
+}
+
+body[data-status="online"] .primary-button:hover {
+  border-color: #6ee7b7;
+  background: #6ee7b7;
+}
+
+body[data-status="online"] .button:focus-visible {
+  outline-color: rgba(52, 211, 153, 0.65);
+}
+
+/* Offline theme */
+body[data-status="offline"] .ambient-glow {
+  background: radial-gradient(
+    ellipse at top,
+    rgba(239, 68, 68, 0.12),
+    transparent 68%
+  );
+}
+
+body[data-status="offline"] .brand-dot {
+  background: #ef4444;
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.7);
+}
+
+body[data-status="offline"] .status-badge.outage {
+  border-color: rgba(239, 68, 68, 0.25);
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.08);
+}
+
+body[data-status="offline"] .eyebrow {
+  color: #ef4444;
+}
+
+body[data-status="offline"] .primary-button {
+  border-color: #ef4444;
+  color: #fff;
+  background: #ef4444;
+}
+
+body[data-status="offline"] .primary-button:hover {
+  border-color: #f87171;
+  background: #f87171;
+}
+
+body[data-status="offline"] .button:focus-visible {
+  outline-color: rgba(239, 68, 68, 0.7);
 }
