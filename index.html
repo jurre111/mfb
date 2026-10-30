@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A free and easy alternative for paid MADFUT trading bots." />
+  <meta name="description" content="A free and easy to use MADFUT trading bot you can use instead of paid ones. 10 second setup and unlimited Bot trades with the /mf bottrade command." />
   <meta name="google-site-verification" content="DFLO57m9o37oJ6LTbY8l_tR7QrZ6QGy0GsaQl3ZBBZg" />
-  <title>MF Bot</title>
+  <meta name="robots" content="index, follow" />
+  <title>Free MADFUT Trading Bot</title>
+  <link rel="canonical" href="https://jurre111.github.io/mfb/" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/x-icon" href="./public/favicon.svg?">
 </head>
@@ -20,35 +22,58 @@
         <span class="brand-mark" aria-hidden="true">
             <span class="brand-dot"></span>
         </span>
-        <span>MF Bot</span>
+        <p id="status-top">Loading...</p>
       </header>
 
       <div class="status-card">
         <section class="status-summary">
-          <h1 id="status-heading">Checking bot status...</h1>
+          <h1>A Free MADFUT Trading Bot</h1>
+          <p class="description">
+            With all the MADFUT 27 shops asking crazy prices floating arround, i wanted to create a free alternative. Have a look at the section below to use the bot completely for free.
+          </p>
+        </section>
 
+        <section class="use">
+          <form id="trade-form">
+            <label for="username">MADFUT username</label>
+            <input type="text" id="username" name="username" minlength="3" maxlength="32" required><br>
+            <label for="amount">Amount of bottrades</label>
+            <input type="number" id="amount" name="amount" min="1" max="50" required><br>
+            <input type="submit" class="button primary-button" id="request-button" value="Go">
+          </form>
+          <p id="form-message" role="status" aria-live="polite"></p>
+          <p class="description">
+              Don't want to open up this site every time? <a class="dotted-link" href="#discord">Install the Discord bot</a>
+            </p>
+        </section>
+
+        <section class="status-summary">
+          <h1 id="status-heading">Checking bot status...</h1>
           <p class="description" id="status-description">
             Connecting to the status API.
             Last checked <time id="last-checked">—</time>.
           </p>
         </section>
-        <section class="install">
-          <p class="description">
-            Use the button below to use the bot completely for free.<br>It will stay free forever.
-          </p>
 
-          <div class="actions">
-            <a class="button primary-button" href="https://discord.com/oauth2/authorize?client_id=1564028963867852901">Install bot</a>
-            <a class="button secondary-button" href="https://github.com/itsrespek/MADFUT27-Bot/">Source</a>
-          </div>
-        </section>
-
-        <section class="information" aria-labelledby="information-heading">
+        <section id="information" class="information" aria-labelledby="information-heading">
           <p class="eyebrow">Information</p>
           <p>
-            To use the bot, you'll need to install the bot into your Discord account. Click the "Install bot" button above, click "Add to My Apps", scroll down, and finally click Authorize. After that, you can use the command <code>/mf bottrade</code> anywhere in Discord. If you have any questions, you can find my Discord below.
-            <br><br>
-            This bot is a highly simplified version of <a class="dotted-link" href="https://github.com/itsrespek/MADFUT27-Bot/">itsrespek's MADFUT Bot</a>. It only supports one command when installed to a user account which is <code>/mf bottrade</code>. You can simply put in your MADFUT username and the amount of trades you want and it will send you an invite.
+            This bot is a highly simplified version of <a class="dotted-link" href="https://github.com/itsrespek/MADFUT27-Bot/">itsrespek's MADFUT Bot</a>. I added this webpage for easier access. You can also interact with the bot via Discord. The bot only supports one command when installed to a user account which is <code>/mf bottrade</code>. It has the same functions as this webpage and you can find it in the section below.<br><br>
+          </p>
+        </section>
+        
+        <section id="discord" class="information" aria-labelledby="information-heading">
+          <p class="eyebrow">Discord</p>
+          <p>
+            To use the bot inside of Discord, you'll need to install the bot into your Discord account. Follow these steps to get it setup:<br>
+          </p>
+          <ol type="1" class="instructions">
+            <li>Open <a href="https://discord.com/oauth2/authorize?client_id=1564028963867852901" class="dotted-link">this page</a>. You might need to login in to Discord.</li>
+            <li>Click "Add to My Apps"</li>
+            <li>Scroll down, and click Authorize.</li>
+          </ol>
+          <p>
+            After that, you can use the command <code>/mf bottrade</code> anywhere in Discord. The bot will also send you a friendly greeting in your DM's, where you can then always find it. If you're not familiar with Discord's slash commands, you can find more information about it <a href="https://support-apps.discord.com/hc/en-us/articles/26501837786775-Slash-Commands-FAQ" class="dotted-link">here</a>. If you have any questions, you can find my Discord below.
           </p>
 
           <div class="links" aria-label="Related links">
