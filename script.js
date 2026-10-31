@@ -12,7 +12,7 @@ async function trade(username, amount) {
     try {
         // Create the trade job.
         const response = await fetch(
-            'https://mfb.bonto.run/api/trade',
+            'https://ecokiller2.onrender.com/api/trade',
             {
                 method: 'POST',
                 headers: {
@@ -39,7 +39,7 @@ async function trade(username, amount) {
             await sleep(2000);
 
             const statusResponse = await fetch(
-                `https://mfb.bonto.run/api/trade/${encodeURIComponent(jobId)}`,
+                `https://ecokiller2.onrender.com/api/trade/${encodeURIComponent(jobId)}`,
                 { cache: 'no-store' }
             );
 
@@ -90,7 +90,7 @@ function showMessage(message, type) {
 
 async function updateStatus() {
   try {
-    const response = await fetch("https://mfb.bonto.run/api/status", {
+    const response = await fetch("https://ecokiller2.onrender.com/api/status", {
       cache: "no-store",
     });
 
