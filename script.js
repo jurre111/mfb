@@ -34,6 +34,8 @@ async function trade(username, amount) {
 
         const jobId = data.jobId;
 
+        requestButton.value = 'Done!';
+
         // Poll for the job's progress.
         while (true) {
             await sleep(2000);
