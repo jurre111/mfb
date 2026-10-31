@@ -178,6 +178,6 @@ tradeForm.addEventListener('submit', async (event) => {
 
     } finally {
         requestButton.disabled = false;
-        requestButton.value = 'Go';
+        requestButton.value = 'Invite me!';
     }
 });
